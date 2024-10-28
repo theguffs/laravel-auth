@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
-
+use App\Http\Controllers\Admin\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +19,16 @@ use App\Http\Controllers\Admin\MainController as AdminMainController;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 
+
 Route::prefix('admin')
     ->name('admin.')
     ->middleware('auth')
     ->group(function () {
 
+    // back-office
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+    // CRUD 
+    Route::resource('projects', ProjectController::class);
 
 });
 

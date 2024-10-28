@@ -15,6 +15,8 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
+        //per ripristinare la tabella project
+        Project::truncate();
             for ($i = 0; $i < 10; $i++) {
                 Project::create([
                     //titolo con 3 parole generate da faker

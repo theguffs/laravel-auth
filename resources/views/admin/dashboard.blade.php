@@ -13,6 +13,10 @@
                     <br>
                     La dashboard è una pagina privata (protetta dal middleware)
                 </div>
+                <div>
+                    <a href="{{ route('admin.projects.index')}}" class="btn btn-primary">mostra i progetti</a>
+                    <a href="{{ route('admin.projects.create')}}" class="btn btn-success">crea un nuovo progetto</a>
+                </div>
             </div>
         </div>
     </div>
